@@ -18,7 +18,7 @@ class Https
         if($_SERVER["REQUEST_URI"] == '/index.php' || $_SERVER["REQUEST_URI"] == '/index.php/index' || $_SERVER["REQUEST_URI"] == '/index'){
             return response()->redirectTo('http://www.xxxxx.cn',301); //重定向首页
         }
-        if($url == 'bxztb.cn'){
+        if($url == 'xxxxx.cn'){
             return response()->redirectTo('http://www.xxxxx.cn'.$_SERVER["REQUEST_URI"],301);  //重定向首页
         }else{
             $res = Areas::GetUrl($where = ['url'=>$url]);  //数据库查询是否存在xxx.xxx.cn   （www.bxztb.cn 不在数据库中）
