@@ -21,7 +21,7 @@ class Https
         if($url == 'xxxxx.cn'){
             return response()->redirectTo('http://www.xxxxx.cn'.$_SERVER["REQUEST_URI"],301);  //重定向首页
         }else{
-            $res = Areas::GetUrl($where = ['url'=>$url]);  //数据库查询是否存在xxx.xxx.cn   （www.xxxxx.cn 不在数据库中）
+            $res = Areas::where(['url'=>$url])->first();  //数据库查询是否存在xxx.xxx.cn   （www.xxxxx.cn 不在数据库中）
             if(empty($res)){
                 return $next($request);
             }else{
