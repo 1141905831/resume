@@ -9,7 +9,7 @@ use Closure;
 class Https
 {
     /*
-     * 用来判断地区链接并且实例化地区类传入对应参数 从而 beijing.bxztb.cn  || hebei.bxztb.cn
+     * 用来判断地区链接并且实例化地区类传入对应参数 从而 beijing.xxxxx.cn  || hebei.xxxxx.cn
      * */
     public function handle($request, Closure $next)
     {
