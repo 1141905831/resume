@@ -16,10 +16,10 @@ class Https
         $url = $_SERVER['HTTP_HOST'];//获取当前 xxx.xxx.cn
 //        echo 'http://www.xxxxx.cn'.$_SERVER["REQUEST_URI"];die;
         if($_SERVER["REQUEST_URI"] == '/index.php' || $_SERVER["REQUEST_URI"] == '/index.php/index' || $_SERVER["REQUEST_URI"] == '/index'){
-            return response()->redirectTo('http://www.xxxxx.cn',301); //重定向首页
+            return response()->redirectTo('http://www.xxxxx.cn',301); //重定向首页 301永久重定向
         }
         if($url == 'xxxxx.cn'){
-            return response()->redirectTo('http://www.xxxxx.cn'.$_SERVER["REQUEST_URI"],301);  //重定向首页
+            return response()->redirectTo('http://www.xxxxx.cn'.$_SERVER["REQUEST_URI"],301);  //重定向首页 301永久重定向
         }else{
             $res = Areas::where(['url'=>$url])->first();  //数据库查询是否存在xxx.xxx.cn   （www.xxxxx.cn 不在数据库中）
             if(empty($res)){
